@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=2155
 
 set -eo pipefail
 
