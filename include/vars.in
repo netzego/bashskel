@@ -1,0 +1,7 @@
+#!/bin/bash
+
+readonly scriptname="$(basename "${BASH_ARGV0%.*}")"
+# readonly scriptdir="$(dirname "$(realpath "${BASH_ARGV0}")")"
+readonly pwd="$(pwd)"
+readonly lockfile="/tmp/${scriptname}.lock"
+readonly configfile="${pwd}/${scriptname}.config"

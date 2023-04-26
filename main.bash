@@ -3,17 +3,14 @@
 
 set -eo pipefail
 
-readonly scriptname="$(basename "${BASH_ARGV0%.*}")"
 readonly scriptdir="$(dirname "$(realpath "${BASH_ARGV0}")")"
-readonly pwd="$(pwd)"
-readonly lockfile="/tmp/${scriptname.lockfile}"
-readonly configfile="${pwd}/${scriptname}.config"
 
-source "${scriptdir}/include/func.bash"
+source "${scriptdir}/include/vars.in"
+source "${scriptdir}/include/func.in"
 
 main() {
 	check_root
-    check_lockfile
+	check_lockfile
 }
 
 main

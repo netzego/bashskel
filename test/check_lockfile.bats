@@ -1,24 +1,20 @@
 #!/bin/bash
 
-# shellcheck disable=2155
-@test "check_lockfile" {
-	source "include/func.bash"
-
-	[[ "$UID" -eq 0 ]] && skip
-
-	run check_lockfile
-
-	[ "${status}" -eq 1 ]
-	[ "${output}" = "\`'" ]
+setup() {
+	source "include/vars.in"
+	source "include/func.in"
 }
 
-@test "uid == 0" {
-	source "include/func.bash"
-
-	[[ "$UID" -ne 0 ]] && skip
-
-	run check_root
-
+@test "check_lockfile(): not exists" {
+	run check_lockfile
 	[ "${status}" -eq 0 ]
 	[ "${output}" = "" ]
+}
+
+@test "check_lockfile(): exists" {
+	touch "${lockfile}"
+	run check_lockfile
+	[ "${status}" -eq 1 ]
+	[ "${output}" = "\`${lockfile}' not found" ]
+	rm "${lockfile}"
 }
