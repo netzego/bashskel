@@ -1,4 +1,4 @@
-PROGNAME		!= ss.bash
+PROGNAME		:= ss.bash
 BATS			:= $(shell which bats)
 BATS_OPTIONS	:= --verbose-run --show-output-of-passing-tests
 
@@ -13,5 +13,5 @@ watch_test:
 
 .PHONY: \
 	test \
-	watch_exec \
+	watch_run \
 	watch_test
