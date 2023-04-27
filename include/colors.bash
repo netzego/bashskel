@@ -1,9 +1,8 @@
 #!/bin/bash
 
-readonly a_norm=$(tput sgr 0 0)       # sgr
-readonly a_underline=$(tput sgr0 1)  # sgr
-readonly a_reverse=$(tput sgr0 2)    # sgr
-readonly a_bold=$(tput sgr0 4)       # sgr
+readonly a_norm=$(tput sgr0)
+readonly a_underline=$(tput smul)
+readonly a_bold=$(tput bold)
 
 readonly f_black=$(tput setaf 0)
 readonly f_red=$(tput setaf 1)
