@@ -9,7 +9,7 @@ setup_file() {
 # DESC: this magic functions is runs once for every bat function
 # ARGS: None
 setup() {
-	readonly BASH_ARGV0="ss.bash"
+	readonly BASH_ARGV0="bashskel.bash"
 	readonly scriptdir="$(realpath "${BATS_TEST_DIRNAME}/..")"
 
 	source "${scriptdir}/include/colors.bash"
