@@ -1,4 +1,4 @@
-PROGNAME		:= ss.bash
+PROGNAME		:= bashskel.bash
 BATS			:= $(shell which bats)
 BATS_OPTIONS	:= --verbose-run --show-output-of-passing-tests
 
