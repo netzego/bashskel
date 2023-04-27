@@ -5,6 +5,9 @@ BATS_OPTIONS	:= --verbose-run --show-output-of-passing-tests
 test:
 	@$(BATS) $(BATS_OPTIONS) -r test/
 
+run:
+	bash $(PROGNAME)
+
 watch_run:
 	@fd --type f \.bash$$ | entr -c bash $(PROGNAME)
 
