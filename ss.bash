@@ -4,21 +4,23 @@ set -eo pipefail
 
 readonly scriptdir="$(dirname "$(realpath "${BASH_ARGV0}")")"
 
-source "${scriptdir}/include/vars.in"
-source "${scriptdir}/include/func.in"
+source "${scriptdir}/include/colors.bash"
+source "${scriptdir}/include/vars.bash"
+source "${scriptdir}/include/funcs.bash"
 
 print_vars() {
-	echo "${FUNCNAME[0]}"
-	echo "scriptdir: ${scriptdir}"
-	echo "scriptname: ${scriptname}"
-	echo "pwd: ${pwd}"
-	echo "lockfile: ${lockfile}"
-	echo "configfile: ${configfile}"
+	log "${FUNCNAME[0]}"
+	log "scriptdir: ${scriptdir}"
+	log "scriptname: ${scriptname}"
+	log "pwd: ${pwd}"
+	log "lockfile: ${lockfile}"
+	log "configfile: ${configfile}"
 }
 
 main() {
-	check_root
+	# check_root
 	check_lockfile
+	load_configfile
 	print_vars
 }
 
