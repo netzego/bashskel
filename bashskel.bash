@@ -40,6 +40,7 @@ init() {
 
 main() {
 	# check_root
+	check_root
 	check_lockfile
 	load_configfile
 	print_vars
