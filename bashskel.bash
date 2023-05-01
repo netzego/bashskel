@@ -39,14 +39,21 @@ init() {
 }
 
 main() {
-	# check_root
+	# init
 	check_root
 	check_lockfile
 	load_configfile
+
 	print_vars
+	log "$pargs"
+
+	if [ "$mode" = "image" ]; then
+		log "\$mode: ${mode}"
+	elif [ "${mode}" = "disc" ]; then
+		log "\$mode: ${mode}"
+	fi
 }
 
-main
 init "$@"
 
 exit 0
