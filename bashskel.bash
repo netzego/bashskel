@@ -47,5 +47,6 @@ main() {
 }
 
 main
+init "$@"
 
 exit 0
