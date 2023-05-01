@@ -7,6 +7,7 @@ readonly scriptdir="$(dirname "$(realpath "${BASH_ARGV0}")")"
 source "${scriptdir}/include/colors.bash"
 source "${scriptdir}/include/vars.bash"
 source "${scriptdir}/include/funcs.bash"
+source "${scriptdir}/include/parse_args.bash"
 
 print_vars() {
 	log "${FUNCNAME[0]}"

@@ -15,6 +15,7 @@ setup() {
 	source "${scriptdir}/include/colors.bash"
 	source "${scriptdir}/include/funcs.bash"
 	source "${scriptdir}/include/vars.bash"
+	source "${scriptdir}/include/parse_args.bash"
 }
 
 # DESC: unset a readonly variable via gdb
