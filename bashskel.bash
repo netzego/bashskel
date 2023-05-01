@@ -20,6 +20,24 @@ print_vars() {
 	log "configfile: ${configfile}"
 }
 
+init() {
+	parse_args "$@"
+
+	case "${action}" in
+	"help")
+		help
+		exit 42
+		;;
+	"version")
+		echo "${scriptname} v${version}"
+		exit 42
+		;;
+	*)
+		main
+		;;
+	esac
+}
+
 main() {
 	# check_root
 	check_lockfile
