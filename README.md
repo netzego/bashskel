@@ -1,5 +1,5 @@
-An opinionated bash script skelton.
+An opinionated skeleton for bash scripts.
 
-### Resources
+Resources
 
 - https://github.com/bats-core/bats-core
