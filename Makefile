@@ -20,3 +20,5 @@ watch_test:
 	test \
 	watch_run \
 	watch_test
+
+.DEFAULT_GOAL := run
