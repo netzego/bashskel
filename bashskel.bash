@@ -12,46 +12,46 @@ source "${scriptdir}/include/help.bash"
 source "${scriptdir}/include/parse_args.bash"
 
 print_vars() {
-	log "${FUNCNAME[0]}"
-	log "scriptdir: ${scriptdir}"
-	log "scriptname: ${scriptname}"
-	log "pwd: ${pwd}"
-	log "lockfile: ${lockfile}"
-	log "configfile: ${configfile}"
+    log "${FUNCNAME[0]}"
+    log "scriptdir: ${scriptdir}"
+    log "scriptname: ${scriptname}"
+    log "pwd: ${pwd}"
+    log "lockfile: ${lockfile}"
+    log "configfile: ${configfile}"
 }
 
 init() {
-	parse_args "$@"
+    parse_args "$@"
 
-	case "${action}" in
-	"help")
-		help
-		exit 42
-		;;
-	"version")
-		echo "${scriptname} v${version}"
-		exit 42
-		;;
-	*)
-		main
-		;;
-	esac
+    case "${action}" in
+    "help")
+        help
+        exit 42
+        ;;
+    "version")
+        echo "${scriptname} v${version}"
+        exit 42
+        ;;
+    *)
+        main
+        ;;
+    esac
 }
 
 main() {
-	# init
-	check_root
-	check_lockfile
-	load_configfile
+    # init
+    check_root
+    check_lockfile
+    load_configfile
 
-	print_vars
-	log "$pargs"
+    print_vars
+    log "$pargs"
 
-	if [ "$mode" = "image" ]; then
-		log "\$mode: ${mode}"
-	elif [ "${mode}" = "disc" ]; then
-		log "\$mode: ${mode}"
-	fi
+    if [ "$mode" = "image" ]; then
+        log "\$mode: ${mode}"
+    elif [ "${mode}" = "disc" ]; then
+        log "\$mode: ${mode}"
+    fi
 }
 
 init "$@"
