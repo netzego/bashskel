@@ -39,7 +39,6 @@ init() {
 }
 
 main() {
-    init
     # check_root
     check_lockfile
     load_configfile
