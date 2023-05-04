@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-	echo "${BASH_ARGV0} [OPTIONS] <FILE>"
+    echo "${BASH_ARGV0} [OPTIONS] <FILE>"
 
-	exit 42
+    exit 42
 }
