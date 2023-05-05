@@ -10,15 +10,7 @@ source "${scriptdir}/include/funcs.bash"
 source "${scriptdir}/include/usage.bash"
 source "${scriptdir}/include/help.bash"
 source "${scriptdir}/include/parse_args.bash"
-
-print_vars() {
-    log "${FUNCNAME[0]}"
-    log "scriptdir: ${scriptdir}"
-    log "scriptname: ${scriptname}"
-    log "pwd: ${pwd}"
-    log "lockfile: ${lockfile}"
-    log "configfile: ${configfile}"
-}
+source "${scriptdir}/include/print_vars.bash"
 
 init() {
     parse_args "$@"
@@ -43,8 +35,7 @@ main() {
     check_lockfile
     load_configfile
 
-    print_vars
-    log "$pargs"
+    [[ "${verbose}" = true ]] && print_vars
 
     if [ "$mode" = "image" ]; then
         log "\$mode: ${mode}"
