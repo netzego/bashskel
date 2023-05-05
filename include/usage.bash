@@ -2,8 +2,9 @@
 
 # DESC: prints usage and exit
 # ARGV: None
+# shellcheck disable=SC2154
 usage() {
-    echo "${BASH_ARGV0} [OPTIONS] <FILE>"
+    echo "usage: ${scriptname} [OPTIONS] <FILE>"
 
     exit 42
 }
