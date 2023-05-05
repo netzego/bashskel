@@ -14,7 +14,7 @@ parse_args() {
         exit 2
     fi
 
-    # `$temp` MUST be quoted!
+    # ensures `--` is set in $@. `$temp` **must** be quoted.
     eval set -- "$temp"
     unset temp
 
