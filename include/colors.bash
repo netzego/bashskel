@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2034
 
 readonly a_norm=$(tput sgr0)
 readonly a_underline=$(tput smul)
