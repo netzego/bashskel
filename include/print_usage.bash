@@ -3,8 +3,8 @@
 # DESC: prints usage and exit
 # ARGV: None
 # shellcheck disable=SC2154
-usage() {
-    echo "usage: ${scriptname} [OPTIONS] <FILE>"
+print_usage() {
+    echo "usage: ${scriptname} [OPTIONS] <POSITIONAL ARGUMENTS>"
 
     exit 42
 }
