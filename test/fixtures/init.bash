@@ -17,6 +17,7 @@ setup() {
     source "${scriptdir}/include/vars.bash"
     source "${scriptdir}/include/parse_args.bash"
     source "${scriptdir}/include/print_vars.bash"
+    source "${scriptdir}/include/print_usage.bash"
     source "${scriptdir}/include/print_help.bash"
 }
 
