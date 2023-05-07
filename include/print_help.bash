@@ -8,4 +8,6 @@ print_help() {
     echo "-v, --version   print the version and exit"
     echo "-d, --debug     enable debug mode"
     echo "-v, --verbose   enable verbose mode"
+
+    exit 42
 }

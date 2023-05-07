@@ -18,7 +18,6 @@ init() {
     case "${action}" in
     "help")
         print_help
-        exit 42
         ;;
     "version")
         echo "${scriptname} v${version}"
