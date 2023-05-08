@@ -30,7 +30,7 @@ main() {
         exit 0
     fi
 
-    if [ "${VERBOSE}" ]; then
+    if [ "${DEBUG}" ]; then
         print_vars
     fi
 
