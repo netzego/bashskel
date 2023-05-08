@@ -20,7 +20,7 @@ init() {
         print_help
         ;;
     "VERSION")
-        echo "${SCRIPTNAME} v${VERSION}"
+        echo "${SCRIPTNAME} v${VERSION_NUMBER}"
         exit 42
         ;;
     *)
