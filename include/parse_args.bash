@@ -2,7 +2,8 @@
 
 # DESC: wraps getopt to parse cli args
 # ARGS: $@: arguments from the command line
-# NOTE: sets global vars. such as $ACTION, $PARGS, etc.
+# NOTE: this function sets global variables. this should be documented some
+#       were. and it is your responsibility.
 # shellcheck disable=SC2154,SC2034
 parse_args() {
     local name="${f_red}***${a_norm} ${SCRIPTNAME}"
