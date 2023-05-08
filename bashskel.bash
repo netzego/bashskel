@@ -19,8 +19,16 @@ main() {
     check_lockfile
     load_configfile
 
-    [[ "${HELP}" ]] && print_help
-    [[ "${VERSION}" ]] && print_version
+    if [ "${HELP}" ]; then
+        print_help
+        exit 0
+    fi
+
+    if [ "${VERSION}" ]; then
+        print_version
+        exit 0
+    fi
+
     [[ "${VERBOSE}" ]] && print_vars
 
     if [ "$MODE" = "image" ]; then

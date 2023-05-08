@@ -5,6 +5,4 @@
 # shellcheck disable=SC2154
 print_version() {
     echo "${SCRIPTNAME} v${VERSION_NUMBER}"
-
-    exit 42
 }
