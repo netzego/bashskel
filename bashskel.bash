@@ -16,9 +16,9 @@ source "${SCRIPTDIR}/include/print_vars.bash"
 
 main() {
     # check_root
-    parse_args "$@"
-    check_lockfile
     load_configfile
+    check_lockfile
+    parse_args "$@"
 
     if [ "${HELP}" ]; then
         print_help

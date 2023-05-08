@@ -11,4 +11,6 @@ print_vars() {
     printf "%s %16s: %s\n" "--" "CONFIGFILE" "${CONFIGFILE}"
     printf "%s %16s: %s\n" "--" "VERBOSE" "${VERBOSE}"
     printf "%s %16s: %s\n" "--" "DEBUG" "${DEBUG}"
+    printf "%s %16s: %s\n" "--" "FOO" "${FOO}"
+    printf "%s %16s: %s\n" "--" "BAR" "${BAR}"
 }
