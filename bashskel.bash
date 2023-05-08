@@ -30,7 +30,9 @@ main() {
         exit 0
     fi
 
-    [[ "${VERBOSE}" ]] && print_vars
+    if [ "${VERBOSE}" ]; then
+        print_vars
+    fi
 
     if [ "$MODE" = "image" ]; then
         log "\$MODE: ${MODE}"
