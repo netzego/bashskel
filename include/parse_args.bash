@@ -21,12 +21,12 @@ parse_args() {
     while true; do
         case "$1" in
         "-h" | "--help")
-            readonly ACTION="help"
+            readonly HELP=true
             shift
             continue
             ;;
         "--version")
-            readonly ACTION="version"
+            readonly VERSION=true
             shift
             continue
             ;;
