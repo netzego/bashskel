@@ -41,11 +41,6 @@ parse_args() {
             shift
             continue
             ;;
-        "-m" | "--mode")
-            readonly MODE="${2}"
-            shift 2
-            continue
-            ;;
         "--")
             shift
             break

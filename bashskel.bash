@@ -34,11 +34,7 @@ main() {
         print_vars
     fi
 
-    if [ "$MODE" = "image" ]; then
-        log "\$MODE: ${MODE}"
-    elif [ "${MODE}" = "disc" ]; then
-        log "\$MODE: ${MODE}"
-    fi
+    # implement your own logic here
 }
 
 main "$@"
