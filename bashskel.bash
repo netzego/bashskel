@@ -2,25 +2,25 @@
 
 set -eo pipefail
 
-readonly scriptdir="$(dirname "$(realpath "${BASH_ARGV0}")")"
+readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 
-source "${scriptdir}/include/colors.bash"
-source "${scriptdir}/include/vars.bash"
-source "${scriptdir}/include/funcs.bash"
-source "${scriptdir}/include/print_usage.bash"
-source "${scriptdir}/include/print_help.bash"
-source "${scriptdir}/include/parse_args.bash"
-source "${scriptdir}/include/print_vars.bash"
+source "${SCRIPTDIR}/include/colors.bash"
+source "${SCRIPTDIR}/include/vars.bash"
+source "${SCRIPTDIR}/include/funcs.bash"
+source "${SCRIPTDIR}/include/print_usage.bash"
+source "${SCRIPTDIR}/include/print_help.bash"
+source "${SCRIPTDIR}/include/parse_args.bash"
+source "${SCRIPTDIR}/include/print_vars.bash"
 
 init() {
     parse_args "$@"
 
-    case "${action}" in
-    "help")
+    case "${ACTION}" in
+    "HELP")
         print_help
         ;;
-    "version")
-        echo "${scriptname} v${version}"
+    "VERSION")
+        echo "${SCRIPTNAME} v${VERSION}"
         exit 42
         ;;
     *)
@@ -34,12 +34,12 @@ main() {
     check_lockfile
     load_configfile
 
-    [[ "${verbose}" = true ]] && print_vars
+    [[ "${VERBOSE}" = true ]] && print_vars
 
-    if [ "$mode" = "image" ]; then
-        log "\$mode: ${mode}"
-    elif [ "${mode}" = "disc" ]; then
-        log "\$mode: ${mode}"
+    if [ "$MODE" = "image" ]; then
+        log "\$MODE: ${MODE}"
+    elif [ "${MODE}" = "disc" ]; then
+        log "\$MODE: ${MODE}"
     fi
 }
 
