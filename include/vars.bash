@@ -3,6 +3,6 @@
 
 readonly PWD="$(pwd)"
 readonly SCRIPTNAME="$(basename "${BASH_ARGV0%.*}")"
-readonly VERSION="0"
+readonly VERSION_NUMBER="0"
 readonly LOCKFILE="/tmp/${SCRIPTNAME}.lock"
 readonly CONFIGFILE="${PWD}/${SCRIPTNAME}.config"
