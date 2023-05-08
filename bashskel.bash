@@ -10,30 +10,17 @@ source "${SCRIPTDIR}/include/funcs.bash"
 source "${SCRIPTDIR}/include/parse_args.bash"
 source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_help.bash"
+source "${SCRIPTDIR}/include/print_version.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
-
-init() {
-    parse_args "$@"
-
-    case "${ACTION}" in
-    "HELP")
-        print_help
-        ;;
-    "VERSION")
-        echo "${SCRIPTNAME} v${VERSION_NUMBER}"
-        exit 42
-        ;;
-    *)
-        main
-        ;;
-    esac
-}
 
 main() {
     # check_root
+    parse_args "$@"
     check_lockfile
     load_configfile
 
+    [[ "${HELP}" = true ]] && print_help
+    [[ "${VERSION}" = true ]] && print_version
     [[ "${VERBOSE}" = true ]] && print_vars
 
     if [ "$MODE" = "image" ]; then
@@ -43,6 +30,6 @@ main() {
     fi
 }
 
-init "$@"
+main "$@"
 
 exit 0
