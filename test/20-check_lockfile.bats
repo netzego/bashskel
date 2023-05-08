@@ -4,17 +4,17 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
 @test "func.in::check_lockfile(): \$lockfile do NOT exists" {
 
-	run -0 check_lockfile
+    run -0 check_lockfile
 }
 
 # shellcheck disable=SC2154
 @test "func.in::check_lockfile(): \$lockfile exists" {
 
-	touch "${lockfile}"
+    touch "${LOCKFILE}"
 
-	run -1 check_lockfile
+    run -1 check_lockfile
 
-	[ "${output}" = "\`${lockfile}' exists" ]
+    [ "${output}" = "\`${LOCKFILE}' exists" ]
 
-	rm "${lockfile}"
+    rm "${LOCKFILE}"
 }
