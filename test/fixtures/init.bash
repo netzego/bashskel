@@ -19,6 +19,7 @@ setup() {
     source "${SCRIPTDIR}/include/print_vars.bash"
     source "${SCRIPTDIR}/include/print_usage.bash"
     source "${SCRIPTDIR}/include/print_help.bash"
+    source "${SCRIPTDIR}/include/print_version.bash"
 }
 
 # DESC: unset a readonly variable via gdb
