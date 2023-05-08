@@ -6,5 +6,5 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 @test "func print_help" {
 
     run -42 print_help
-    [ "${lines[0]}" = "${scriptname} (v${version})" ]
+    [ "${lines[0]}" = "${SCRIPTNAME} (v${VERSION})" ]
 }
