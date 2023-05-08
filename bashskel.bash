@@ -19,9 +19,9 @@ main() {
     check_lockfile
     load_configfile
 
-    [[ "${HELP}" = true ]] && print_help
-    [[ "${VERSION}" = true ]] && print_version
-    [[ "${VERBOSE}" = true ]] && print_vars
+    [[ "${HELP}" ]] && print_help
+    [[ "${VERSION}" ]] && print_version
+    [[ "${VERBOSE}" ]] && print_vars
 
     if [ "$MODE" = "image" ]; then
         log "\$MODE: ${MODE}"
