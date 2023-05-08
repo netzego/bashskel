@@ -7,9 +7,9 @@ readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 source "${SCRIPTDIR}/include/colors.bash"
 source "${SCRIPTDIR}/include/vars.bash"
 source "${SCRIPTDIR}/include/funcs.bash"
+source "${SCRIPTDIR}/include/parse_args.bash"
 source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_help.bash"
-source "${SCRIPTDIR}/include/parse_args.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
 init() {
