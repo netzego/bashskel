@@ -10,15 +10,15 @@ setup_file() {
 # ARGS: None
 setup() {
     readonly BASH_ARGV0="bashskel.bash"
-    readonly scriptdir="$(realpath "${BATS_TEST_DIRNAME}/..")"
+    readonly SCRIPTDIR="$(realpath "${BATS_TEST_DIRNAME}/..")"
 
-    source "${scriptdir}/include/colors.bash"
-    source "${scriptdir}/include/funcs.bash"
-    source "${scriptdir}/include/vars.bash"
-    source "${scriptdir}/include/parse_args.bash"
-    source "${scriptdir}/include/print_vars.bash"
-    source "${scriptdir}/include/print_usage.bash"
-    source "${scriptdir}/include/print_help.bash"
+    source "${SCRIPTDIR}/include/colors.bash"
+    source "${SCRIPTDIR}/include/funcs.bash"
+    source "${SCRIPTDIR}/include/vars.bash"
+    source "${SCRIPTDIR}/include/parse_args.bash"
+    source "${SCRIPTDIR}/include/print_vars.bash"
+    source "${SCRIPTDIR}/include/print_usage.bash"
+    source "${SCRIPTDIR}/include/print_help.bash"
 }
 
 # DESC: unset a readonly variable via gdb
