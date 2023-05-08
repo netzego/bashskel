@@ -2,10 +2,10 @@
 
 # DESC: wraps getopt to parse cli args
 # ARGS: $@: arguments from the command line
-# NOTE: sets globa vars. such as $action, $pargs, etc.
+# NOTE: sets global vars. such as $ACTION, $PARGS, etc.
 # shellcheck disable=SC2154,SC2034
 parse_args() {
-    local name="${f_red}***${a_norm} ${scriptname}"
+    local name="${f_red}***${a_norm} ${SCRIPTNAME}"
     temp=$(getopt -o "hvdm:" -l "help,verbose,debug,mode:,version" -n "${name}" -- "$@")
 
     # `$temp` MUST not be a local variable! otherwise this will NOT work
@@ -21,27 +21,27 @@ parse_args() {
     while true; do
         case "$1" in
         "-h" | "--help")
-            readonly action="help"
+            readonly ACTION="help"
             shift
             continue
             ;;
         "--version")
-            readonly action="version"
+            readonly ACTION="version"
             shift
             continue
             ;;
         "-v" | "--verbose")
-            readonly verbose=true
+            readonly VERBOSE=true
             shift
             continue
             ;;
         "-d" | "--debug")
-            readonly debug=true
+            readonly DEBUG=true
             shift
             continue
             ;;
         "-m" | "--mode")
-            readonly mode="${2}"
+            readonly MODE="${2}"
             shift 2
             continue
             ;;
@@ -58,5 +58,5 @@ parse_args() {
         esac
     done
 
-    readonly pargs="$*"
+    readonly PARGS="$*"
 }
