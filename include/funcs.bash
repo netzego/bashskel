@@ -14,15 +14,3 @@ die() {
     echo -e "${f_red}***${a_norm}" "$*" >&2
     exit 128
 }
-
-# DESC: Loads $PWD/$SCRIPTNAME.config file
-# ARGS: None
-# shellcheck disable=SC2154,SC1090
-load_configfile() {
-    if [ -e "${CONFIGFILE}" ]; then
-        source "${CONFIGFILE}"
-    else
-        echo "\`${CONFIGFILE}' not found" >&2
-        exit 1
-    fi
-}
