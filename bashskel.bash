@@ -9,17 +9,13 @@ source "${SCRIPTDIR}/include/colors.bash"
 source "${SCRIPTDIR}/include/vars.bash"
 source "${SCRIPTDIR}/include/funcs.bash"
 source "${SCRIPTDIR}/include/parse_args.bash"
+source "${SCRIPTDIR}/include/check_logfile.bash"
 source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_help.bash"
 source "${SCRIPTDIR}/include/print_version.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
 main() {
-    # check_root
-    load_configfile
-    check_lockfile
-    parse_args "$@"
-
     if [ "${HELP}" ]; then
         print_help
         exit 0
@@ -37,6 +33,12 @@ main() {
     # implement your own logic here
 }
 
-main "$@"
+# check_root
+check_lockfile
+load_configfile
+parse_args "$@"
+check_logfile
+
+main "$@" 2>&1 | tee "${LOGFILE}"
 
 exit 0
