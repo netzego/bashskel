@@ -15,6 +15,8 @@ source "${SCRIPTDIR}/include/print_help.bash"
 source "${SCRIPTDIR}/include/print_version.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
+# ARGS: $@: cli arguments
+# NOTE: stdout and stderr will eventually get logged
 main() {
     if [ "${DEBUG}" ]; then
         print_vars
