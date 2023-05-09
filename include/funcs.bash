@@ -24,16 +24,6 @@ check_root() {
     fi
 }
 
-# DESC: Check if $LOCKFILE exists to prevent running multiple instances
-# ARGS: None
-# shellcheck disable=2154
-check_lockfile() {
-    if [ -e "${LOCKFILE}" ]; then
-        echo "\`${LOCKFILE}' exists" >&2
-        exit 1
-    fi
-}
-
 # DESC: Loads $PWD/$SCRIPTNAME.config file
 # ARGS: None
 # shellcheck disable=SC2154,SC1090
