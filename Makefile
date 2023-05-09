@@ -14,7 +14,7 @@ watch_run:
 	@fd --type f \.bash$$ | entr -c bash $(PROGNAME) $(ARGS)
 
 watch_test:
-	@fd --type f "\.bats$$|\.bash$$" | entr -c $(BATS) $(BATS_OPTIONS) -r test/
+	@fd --type f "\.bats$$|\.bash$$" | entr -c $(BATS) $(BATS_OPTIONS) -r test/$(BATS_GLOB)
 
 .PHONY: \
 	test \
