@@ -7,7 +7,7 @@
 # shellcheck disable=SC2154,SC2034
 parse_args() {
     local name="${f_red}***${a_norm} ${SCRIPTNAME}"
-    temp=$(getopt -o "hvdf:b:" -l "help,verbose,debug,foo:,bar:,version" -n "${name}" -- "$@")
+    temp=$(getopt -o "hvdl:f:b:" -l "help,verbose,debug,foo:,bar:,version" -n "${name}" -- "$@")
 
     # `$temp` MUST not be a local variable! otherwise this will NOT work
     # shellcheck disable=SC2181
