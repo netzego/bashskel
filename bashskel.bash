@@ -16,16 +16,6 @@ source "${SCRIPTDIR}/include/print_version.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
 main() {
-    if [ "${HELP}" ]; then
-        print_help
-        exit 0
-    fi
-
-    if [ "${VERSION}" ]; then
-        print_version
-        exit 0
-    fi
-
     if [ "${DEBUG}" ]; then
         print_vars
     fi
@@ -38,6 +28,16 @@ check_lockfile
 load_configfile
 parse_args "$@"
 check_logfile
+
+if [ "${HELP}" ]; then
+    print_help
+    exit 0
+fi
+
+if [ "${VERSION}" ]; then
+    print_version
+    exit 0
+fi
 
 main "$@" 2>&1 | tee "${LOGFILE}"
 
