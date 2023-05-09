@@ -15,15 +15,6 @@ die() {
     exit 128
 }
 
-# DESC: Check if $UID is equal 0
-# ARGS: None
-check_root() {
-    if [ $UID -ne 0 ]; then
-        echo "must run as root" >&2
-        exit 1
-    fi
-}
-
 # DESC: Loads $PWD/$SCRIPTNAME.config file
 # ARGS: None
 # shellcheck disable=SC2154,SC1090
