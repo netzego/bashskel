@@ -8,4 +8,5 @@ print_help() {
     echo "    --version     print the version number and exit"
     echo "-d, --debug       set debug flag"
     echo "-v, --verbose     set verbose flag"
+    echo "-l, --logfile     set the logfile and activate logging"
 }
