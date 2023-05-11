@@ -69,5 +69,5 @@ parse_args() {
         esac
     done
 
-    readonly PARGS="$*"
+    readonly POS_ARGS="$*"
 }
