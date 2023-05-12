@@ -15,5 +15,5 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
     run -1 load_configfile
 
-    [ "${output}" = "\`' not found" ]
+    [ "${output}" = "${ERR_PREFIX} \`${CONFIGFILE}' not found" ]
 }
