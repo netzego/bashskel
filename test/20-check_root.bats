@@ -15,5 +15,5 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
     run -1 check_root
 
-    [ "${output}" = "must run as root" ]
+    [ "${output}" = "${ERR_PREFIX} must run as root" ]
 }

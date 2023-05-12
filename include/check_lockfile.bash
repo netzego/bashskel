@@ -5,7 +5,6 @@
 # shellcheck disable=2154
 check_lockfile() {
     if [ -e "${LOCKFILE}" ]; then
-        echo "\`${LOCKFILE}' exists" >&2
-        exit 1
+        die 1 "\`${LOCKFILE}' exists"
     fi
 }

@@ -22,5 +22,5 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
     run -1 check_logfile
 
-    [ "${output}" = "\`${LOGFILE}' path to file do not exist" ]
+    [ "${output}" = "${ERR_PREFIX} \`${LOGFILE}' path to file do not exist" ]
 }

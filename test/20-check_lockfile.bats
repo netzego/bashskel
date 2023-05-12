@@ -14,7 +14,7 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
     run -1 check_lockfile
 
-    [ "${output}" = "\`${LOCKFILE}' exists" ]
+    [ "${output}" = "${ERR_PREFIX} \`${LOCKFILE}' exists" ]
 
     rm "${LOCKFILE}"
 }

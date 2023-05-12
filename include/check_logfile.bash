@@ -6,7 +6,6 @@
 check_logfile() {
     local logfile_dir="$(realpath "$(dirname "${LOGFILE}")")"
     if [ ! -d "${logfile_dir}" ]; then
-        echo "\`${LOGFILE}' path to file do not exist" >&2
-        exit 1
+        die 1 "\`${LOGFILE}' path to file do not exist"
     fi
 }
