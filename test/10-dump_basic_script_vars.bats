@@ -4,8 +4,8 @@ load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
 # shellcheck disable=2154
 @test "dump basic script vars" {
-	echo "PWD: ${pwd}"
-	echo "SCRIPTDIR: ${scriptdir}"
-	echo "SCRIPTNAME: ${scriptname}"
-	echo "\$0: ${0}"
+    echo "PWD: ${PWD}"
+    echo "SCRIPTDIR: ${SCRIPTDIR}"
+    echo "SCRIPTNAME: ${SCRIPTNAME}"
+    echo "\$0: ${0}"
 }
