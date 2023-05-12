@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cleanup() {
-    info "cleanup(): Not implemented"
+    delete_lockfile
 }
