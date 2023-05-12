@@ -7,7 +7,6 @@ load_configfile() {
     if [ -e "${CONFIGFILE}" ]; then
         source "${CONFIGFILE}"
     else
-        echo "\`${CONFIGFILE}' not found" >&2
-        exit 1
+        die 1 "\`${CONFIGFILE}' not found"
     fi
 }
