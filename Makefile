@@ -1,5 +1,4 @@
 PROGNAME		:= bashskel.bash
-ARGS			:= --debug --mode image /dev/loop0
 BATS			:= $(shell which bats)
 BATS_OPTIONS	:= --verbose-run --show-output-of-passing-tests
 
