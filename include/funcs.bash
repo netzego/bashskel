@@ -1,16 +1,44 @@
 #!/bin/bash
+# shellcheck disable=SC2154
 
-# DESC: prints $@ to stdout
+readonly INFO_COLOR="${f_cyan}"
+readonly INFO_STRING=">>>"
+readonly INFO_PREFIX="${INFO_COLOR}${INFO_STRING}${a_norm}"
+readonly ERR_COLOR="${f_red}"
+readonly ERR_STRING="***"
+readonly ERR_PREFIX="${ERR_COLOR}${ERR_STRING}${a_norm}"
+readonly WARN_COLOR="${f_magenta}"
+readonly WARN_STRING="@@@"
+readonly WARN_PREFIX="${WARN_COLOR}${WARN_STRING}${a_norm}"
+
+# DESC: prints colored $INFO_PREFIX and "$@" to stdout.
 # ARGS: $@: messages to print
 # shellcheck disable=2154
-log() {
-    echo -e "${a_bold}>>>${a_norm}" "$*"
+info() {
+    echo -e "${INFO_PREFIX}" "$*"
 }
 
-# DESC: prints $@ to stderr and exit with return value 128
+# DESC: prints colored $ERR_PREFIX and "$@" to stderr.
 # ARGS: $@: messages to print
 # shellcheck disable=2154
+err() {
+    echo -e "${ERR_PREFIX}" "$*" >&2
+}
+
+# DESC: prints $WARN_PREFIX and "$@" to stderr.
+# ARGS: $@: messages to print
+# shellcheck disable=2154
+warn() {
+    echo -e "${WARN_PREFIX}" "$*" >&2
+}
+
+# DESC: prints ${@:1} to stderr and exit with code $1
+# ARGS: $1: numeric exit code
+#       ${@:1}: messages to print
+# shellcheck disable=2154
 die() {
-    echo -e "${f_red}***${a_norm}" "$*" >&2
-    exit 128
+    local exitcode="$1"
+    shift
+    err "$*"
+    exit "${exitcode}"
 }
