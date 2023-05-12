@@ -2,12 +2,12 @@
 
 load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
-@test "func.in::load_configfile(): \$configfile exists" {
+@test "include/load_configfile(): \$configfile exists" {
 
     run -0 load_configfile
 }
 
-@test "func.in::load_configfile(): \$configfile do NOT exists" {
+@test "include/load_configfile(): \$configfile do NOT exists" {
 
     [[ "$UID" -ne 0 ]] && skip
 
