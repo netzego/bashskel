@@ -29,14 +29,14 @@ main() {
     # implement your own logic here
 }
 
-# check_root
-check_lockfile
-
 trap cleanup EXIT
 
-create_lockfile
+# check_root
 load_configfile
 parse_args "$@"
+check_lockfile
+create_lockfile
+check_logfile
 
 if [ "${HELP}" ]; then
     print_help
@@ -48,7 +48,6 @@ if [ "${VERSION}" ]; then
     exit 0
 fi
 
-check_logfile
 main "$@" 2>&1 | tee "${LOGFILE}"
 
 exit 0
