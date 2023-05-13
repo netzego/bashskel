@@ -30,7 +30,6 @@ setup() {
 # ARGS: $1: the variable name to unset
 # NOTE: this must run as root
 unbind_readonly() {
-
     if [ "$UID" -ne 0 ]; then
         die 1 "\`${FUNCNAME[0]}' must run as root"
     fi
