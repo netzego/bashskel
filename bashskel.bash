@@ -48,6 +48,6 @@ if [ "${VERSION}" ]; then
     exit 0
 fi
 
-main "$@" 2>&1 | tee "${LOGFILE}"
+main 2>&1 | tee "${LOGFILE}"
 
 exit 0
