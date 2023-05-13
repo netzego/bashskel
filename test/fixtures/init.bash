@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
-# DESC: this magic functions is runs once for every bat file
+# DESC: this functions runs once for every bat file
 # ARGS: None
 setup_file() {
     bats_require_minimum_version 1.5.0
 }
 
-# DESC: this magic functions is runs once for every bat function
+# DESC: this functions runs once for every bat function call
 # ARGS: None
 setup() {
     readonly BASH_ARGV0="bashskel.bash"
