@@ -10,7 +10,7 @@ source "${SCRIPTDIR}/include/vars.bash"
 source "${SCRIPTDIR}/include/funcs.bash"
 source "${SCRIPTDIR}/include/parse_args.bash"
 source "${SCRIPTDIR}/include/check_root.bash"
-source "${SCRIPTDIR}/include/lockfile.bash"
+source "${SCRIPTDIR}/include/write_lockfile.bash"
 source "${SCRIPTDIR}/include/load_configfile.bash"
 source "${SCRIPTDIR}/include/check_logfile.bash"
 source "${SCRIPTDIR}/include/print_usage.bash"
@@ -34,8 +34,7 @@ trap cleanup EXIT
 # check_root
 load_configfile
 parse_args "$@"
-check_lockfile
-create_lockfile
+write_lockfile
 check_logfile
 
 if [ "${HELP}" ]; then

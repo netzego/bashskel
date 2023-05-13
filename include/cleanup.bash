@@ -1,5 +1,8 @@
 #!/bin/bash
 
 cleanup() {
-    delete_lockfile
+    # remove $LOCKFILE
+    if [ -e "${LOCKFILE}" ]; then
+        rm -v "${LOCKFILE}"
+    fi
 }
