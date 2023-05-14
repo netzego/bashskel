@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# DESC: check if path prefix exists and is writeable
+# DESC: check if path prefix exists and is writable
 # ARGS: $1: path to check
 # EXIT: if path prefix do not exists
-#       if path prefix is not writeable
+#       if path prefix is not writable
 check_path_prefix() {
     local path="$1"
     local prefix="$(realpath "$(dirname "${path}")")"
@@ -13,7 +13,7 @@ check_path_prefix() {
     fi
 
     if [ ! -w "${prefix}" ]; then
-        die 1 "\`${path}' path prefix is not writeable"
+        die 1 "\`${path}' path prefix is not writable"
     fi
 }
 }
