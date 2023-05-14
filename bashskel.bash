@@ -1,7 +1,11 @@
 #!/bin/bash
 # shellcheck disable=SC2155
 
-set -eo pipefail
+set -o errexit
+set -o nounused
+set -o pipefail
+
+IFS=$'\n\t'
 
 readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 
