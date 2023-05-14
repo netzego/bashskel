@@ -26,13 +26,14 @@ setup() {
     source "${SCRIPTDIR}/include/print_vars.bash"
 }
 
-# DESC: unset a readonly variable via gdb
-# ARGS: $1: the variable name to unset
+# DESC: unbind a readonly variable via gdb
+# ARGS: $1: readonly variable to unbind
 # NOTE: this must run as root
 unbind_readonly() {
     if [ "$UID" -ne 0 ]; then
         die 1 "\`${FUNCNAME[0]}' must run as root"
     fi
 
+    # see https://stackoverflow.com/a/17398009
     gdb -ex 'call (int) unbind_variable("'"$1"'")' --pid=$$ --batch
 }
