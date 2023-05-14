@@ -9,10 +9,8 @@ POS_ARGS=
 FOO=
 BAR=
 
-# DESC: wraps getopt to parse cli args
-# ARGS: $@: arguments from the command line
-# NOTE: this function sets global variables. this should be documented some
-#       were. and it is your responsibility.
+# DESC: wraps getopt to parse cli arguments and sets global parameters
+# ARGS: $@: arguments from the cli
 # shellcheck disable=SC2154,SC2034
 parse_args() {
     local name="${f_red}***${a_norm} ${SCRIPTNAME}"
