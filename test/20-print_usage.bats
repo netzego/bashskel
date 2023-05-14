@@ -3,8 +3,8 @@
 
 load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
-@test "func print_usage" {
-
+@test "print_usage()" {
     run -0 print_usage
+
     [ "${lines[0]:0:5}" = "usage" ]
 }
