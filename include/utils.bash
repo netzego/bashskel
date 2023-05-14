@@ -42,17 +42,3 @@ die() {
     err "$*"
     exit "${exitcode}"
 }
-
-# DESC: check if path prefix exist.
-# ARGS: $1: path to check
-# ECHO: boolean
-path_prefix_exists() {
-    local path="$1"
-    local prefix="$(realpath "$(dirname "${path}")")"
-
-    if [ -d "${prefix}" ]; then
-        echo true
-    else
-        echo false
-    fi
-}
