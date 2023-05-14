@@ -2,7 +2,7 @@
 
 load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
-@test "write_lockfile(): \$LOCKFILE do NOT exists" {
+@test "write_lockfile(): LOCKFILE do NOT exists" {
     run -0 write_lockfile
 
     [ -e "$LOCKFILE" ]
@@ -10,7 +10,7 @@ load "${BATS_TEST_DIRNAME}/fixtures.bats"
     rm "${LOCKFILE}"
 }
 
-@test "write_lockfile(): \$LOCKFILE do exists" {
+@test "write_lockfile(): LOCKFILE do exists" {
     touch "${LOCKFILE}"
 
     run -1 write_lockfile
@@ -20,7 +20,7 @@ load "${BATS_TEST_DIRNAME}/fixtures.bats"
     rm "${LOCKFILE}"
 }
 
-@test "write_lockfile(): \$LOCKFILE path prefix NOT exists" {
+@test "write_lockfile(): LOCKFILE path prefix NOT exists [run as root]" {
     [[ "$UID" -ne 0 ]] && skip
 
     unbind_readonly "LOCKFILE"
