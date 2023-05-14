@@ -11,10 +11,6 @@ check_path_prefix() {
     if [ ! -d "${prefix}" ]; then
         die 1 "\`${path}' path prefix do not exists"
     fi
-
-    if [ ! -w "${prefix}" ]; then
-        die 1 "\`${path}' path prefix is not writable"
-    fi
 }
 
 # DESC: check $LOGFILE path prefix
