@@ -3,8 +3,8 @@
 
 load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
-@test "func print_version" {
-
+@test "print_version()" {
     run -0 print_version
+
     [ "${output}" = "${SCRIPTNAME} v${VERSION_NUMBER}" ]
 }
