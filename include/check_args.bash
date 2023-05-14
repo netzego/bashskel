@@ -16,4 +16,16 @@ check_path_prefix() {
         die 1 "\`${path}' path prefix is not writable"
     fi
 }
+
+# DESC: check $LOGFILE path prefix
+# ARGS: none
+check_logfile() {
+    check_path_prefix "${LOGFILE}"
+}
+
+# DESC: allocated checks for cli args
+# ARGS: none
+# NOTE: this must run only after load_configfile and parse_args was called
+check_args() {
+    check_logfile
 }
