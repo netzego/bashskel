@@ -4,10 +4,10 @@ HELP=false
 VERSION=false
 DEBUG=false
 VERBOSE=false
+POS_ARGS=()
 LOGFILE="${LOGFILE:-/dev/null}"
-POS_ARGS=
-FOO=
-BAR=
+FOO="${FOO:-abc}"
+BAR="${BAR:-xyz}"
 
 # DESC: wraps getopt to parse cli arguments and sets global parameters
 # ARGS: $@: arguments from the cli
