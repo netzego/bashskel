@@ -6,7 +6,7 @@
 #       if $LOCKFILE path prefix does not exists
 write_lockfile() {
     # shellcheck disable=SC2046
-    if [ ! $(path_prefix_exists "${LOCKFILE}") ]; then
+    if [ $(path_prefix_exists "${LOCKFILE}") = false ]; then
         die 1 "\`${LOCKFILE}' path prefix do not exists"
     fi
 
