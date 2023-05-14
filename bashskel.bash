@@ -10,17 +10,17 @@ IFS=$'\n\t'
 readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 
 source "${SCRIPTDIR}/include/colors.bash"
-source "${SCRIPTDIR}/include/vars.bash"
 source "${SCRIPTDIR}/include/utils.bash"
+source "${SCRIPTDIR}/include/vars.bash"
+source "${SCRIPTDIR}/include/cleanup.bash"
 source "${SCRIPTDIR}/include/check_root.bash"
 source "${SCRIPTDIR}/include/load_configfile.bash"
 source "${SCRIPTDIR}/include/parse_args.bash"
 source "${SCRIPTDIR}/include/check_args.bash"
-source "${SCRIPTDIR}/include/cleanup.bash"
 source "${SCRIPTDIR}/include/write_lockfile.bash"
-source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_help.bash"
 source "${SCRIPTDIR}/include/print_version.bash"
+source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
 # ARGS: none
