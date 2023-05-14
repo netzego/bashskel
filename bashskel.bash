@@ -26,7 +26,7 @@ source "${SCRIPTDIR}/include/cleanup.bash"
 # ARGS: none
 # NOTE: stdout and stderr will eventually get logged
 main() {
-    if [ "${DEBUG}" ]; then
+    if [ ${DEBUG} = true ]; then
         print_vars
     fi
 
@@ -41,12 +41,12 @@ parse_args "$@"
 write_lockfile
 check_logfile
 
-if [ "${HELP}" ]; then
+if [ ${HELP} = true ]; then
     print_help
     exit 0
 fi
 
-if [ "${VERSION}" ]; then
+if [ ${VERSION} = true ]; then
     print_version
     exit 0
 fi
