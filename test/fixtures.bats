@@ -16,15 +16,14 @@ setup() {
     source "${SCRIPTDIR}/include/utils.bash"
     source "${SCRIPTDIR}/include/vars.bash"
     source "${SCRIPTDIR}/include/check_root.bash"
+    source "${SCRIPTDIR}/include/load_configfile.bash"
     source "${SCRIPTDIR}/include/parse_args.bash"
     source "${SCRIPTDIR}/include/check_args.bash"
-    source "${SCRIPTDIR}/include/print_vars.bash"
     source "${SCRIPTDIR}/include/write_lockfile.bash"
-    source "${SCRIPTDIR}/include/load_configfile.bash"
-    source "${SCRIPTDIR}/include/print_usage.bash"
     source "${SCRIPTDIR}/include/print_help.bash"
     source "${SCRIPTDIR}/include/print_version.bash"
-    source "${SCRIPTDIR}/include/check_logfile.bash"
+    source "${SCRIPTDIR}/include/print_usage.bash"
+    source "${SCRIPTDIR}/include/print_vars.bash"
 }
 
 # DESC: unset a readonly variable via gdb
