@@ -2,7 +2,7 @@
 # shellcheck disable=SC2155
 
 set -o errexit
-set -o nounused
+set -o nounset
 set -o pipefail
 
 IFS=$'\n\t'
