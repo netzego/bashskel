@@ -10,7 +10,7 @@ setup_file() {
 # ARGS: none
 setup() {
     readonly SCRIPTDIR="$(realpath "$(dirname "${BATS_TEST_FILENAME}")")/.."
-    # readonly BASH_ARGV0="bashskel.bash"
+    readonly BASH_ARGV0="bashskel.bash"
 
     source "${SCRIPTDIR}/include/colors.bash"
     source "${SCRIPTDIR}/include/utils.bash"
