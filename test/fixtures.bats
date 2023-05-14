@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # DESC: this functions runs once for every bat file
 # ARGS: none
