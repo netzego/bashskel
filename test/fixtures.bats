@@ -16,6 +16,7 @@ setup() {
     source "${SCRIPTDIR}/include/colors.bash"
     source "${SCRIPTDIR}/include/utils.bash"
     source "${SCRIPTDIR}/include/vars.bash"
+    source "${SCRIPTDIR}/include/cleanup.bash"
     source "${SCRIPTDIR}/include/check_root.bash"
     source "${SCRIPTDIR}/include/load_configfile.bash"
     source "${SCRIPTDIR}/include/parse_args.bash"
