@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 
 # DESC: this functions runs once for every bat file
-# ARGS: None
+# ARGS: none
 setup_file() {
     bats_require_minimum_version 1.5.0
 }
 
 # DESC: this functions runs once for every bat function call
-# ARGS: None
+# ARGS: none
 setup() {
     readonly BASH_ARGV0="bashskel.bash"
     readonly SCRIPTDIR="$(realpath "${BATS_TEST_DIRNAME}/..")"
