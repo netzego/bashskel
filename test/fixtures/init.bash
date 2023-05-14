@@ -13,7 +13,7 @@ setup() {
     readonly SCRIPTDIR="$(realpath "${BATS_TEST_DIRNAME}/..")"
 
     source "${SCRIPTDIR}/include/colors.bash"
-    source "${SCRIPTDIR}/include/funcs.bash"
+    source "${SCRIPTDIR}/include/utils.bash"
     source "${SCRIPTDIR}/include/vars.bash"
     source "${SCRIPTDIR}/include/parse_args.bash"
     source "${SCRIPTDIR}/include/print_vars.bash"
