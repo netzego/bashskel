@@ -8,6 +8,7 @@ set -o pipefail
 IFS=$'\n\t'
 
 readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
+readonly ARGS=("$@")
 
 source "${SCRIPTDIR}/include/colors.bash"
 source "${SCRIPTDIR}/include/utils.bash"
@@ -37,7 +38,7 @@ trap cleanup EXIT
 
 # check_root
 load_configfile
-parse_args "$@"
+parse_args "${ARGS[@]}"
 check_args
 write_lockfile
 

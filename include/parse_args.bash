@@ -89,8 +89,8 @@ parse_args() {
         esac
     done
 
-    # shellcheck disable=SC2124
-    POS_ARGS="$@"
+    # this does NOT work without braces
+    POS_ARGS=("$@")
 
     readonly_args
 }
