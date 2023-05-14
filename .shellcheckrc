@@ -1,0 +1,8 @@
+# Look for sourced files relative to the checked script
+source-path=SCRIPTDIR
+
+# Allow opening any sourced file, even if not specified as input
+external-sources=true
+
+# Declare and assign separately to avoid masking return values.
+disable=SC2155
