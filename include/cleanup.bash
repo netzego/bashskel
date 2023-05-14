@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cleanup() {
-    # remove $LOCKFILE
 # DESC: remove $LOCKFILE if any
 # ARGS: none
 remove_lockfile() {
@@ -13,3 +11,6 @@ remove_lockfile() {
 # DESC: clean up artifacts on exit signals
 # ARGS: none
 # NOTE: this is meant to call from a trap
+cleanup() {
+    remove_lockfile
+}
