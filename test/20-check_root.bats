@@ -1,6 +1,6 @@
 #!/bin/bash
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 @test "func.in::check_root(): \$UID == 0" {
 

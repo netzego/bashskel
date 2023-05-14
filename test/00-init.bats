@@ -1,6 +1,6 @@
 #!/bin/bash
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 # shellcheck disable=SC2154
 @test "load fixtures/init.bash and test variables" {

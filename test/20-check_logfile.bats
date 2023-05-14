@@ -1,6 +1,6 @@
 #!/bin/bash
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 @test "includes/check_logfile(): LOGFILE from vars.bash" {
 

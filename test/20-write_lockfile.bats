@@ -1,6 +1,6 @@
 #!/bin/bash
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 @test "write_lockfile(): \$LOCKFILE do NOT exists" {
     run -0 write_lockfile

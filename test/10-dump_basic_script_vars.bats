@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 # shellcheck disable=2154
 @test "dump basic script vars" {

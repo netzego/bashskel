@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2154
 
-load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
+load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 @test "test var colors.bash::f_black" {
     # insert escape code with ^V-ESC
