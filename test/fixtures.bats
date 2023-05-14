@@ -9,8 +9,8 @@ setup_file() {
 # DESC: this functions runs once for every bat function call
 # ARGS: none
 setup() {
-    readonly BASH_ARGV0="bashskel.bash"
-    readonly SCRIPTDIR="$(realpath "${BATS_TEST_DIRNAME}/..")"
+    readonly SCRIPTDIR="$(realpath "$(dirname "${BATS_TEST_FILENAME}")")/.."
+    # readonly BASH_ARGV0="bashskel.bash"
 
     source "${SCRIPTDIR}/include/colors.bash"
     source "${SCRIPTDIR}/include/utils.bash"
