@@ -1,5 +1,14 @@
 #!/bin/bash
 
+HELP=false
+VERSION=false
+DEBUG=false
+VERBOSE=false
+LOGFILE="${LOGFILE:-/dev/null}"
+POS_ARGS=
+FOO=
+BAR=
+
 # DESC: wraps getopt to parse cli args
 # ARGS: $@: arguments from the command line
 # NOTE: this function sets global variables. this should be documented some
