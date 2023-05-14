@@ -42,3 +42,15 @@ die() {
     err "$*"
     exit "${exitcode}"
 }
+
+# DESC: test if $1 is an array
+# ARGS: $1: varibale name
+is_array() {
+    local varname="$1"
+
+    if [[ "$(declare -p "${varname}")" =~ "declare -a" ]]; then
+        echo true
+    else
+        echo false
+    fi
+}
