@@ -90,3 +90,25 @@ load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
     [[ "${output}" == "${ERR_PREFIX} ${SCRIPTNAME}: unrecognized option"* ]]
 }
+
+@test "parse_args(): --logfile /dev/null" {
+    local args=("--logfile" "/dev/null")
+
+    run -0 parse_args "${args[@]}"
+}
+
+@test "parse_args(): -l MISSING ARGS" {
+    local args=("-l")
+
+    run -2 parse_args "${args[@]}"
+
+    [[ "${output}" == "${ERR_PREFIX} ${SCRIPTNAME}: option requires an argument"* ]]
+}
+
+@test "parse_args(): --logfile MISSING ARGS" {
+    local args=("--logfile")
+
+    run -2 parse_args "${args[@]}"
+
+    [[ "${output}" == "${ERR_PREFIX} ${SCRIPTNAME}: option '${args[0]}' requires an argument"* ]]
+}
