@@ -2,9 +2,9 @@
 
 load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
-# DESC: test bats setup func
 # shellcheck disable=SC2154
-@test "fixtures.bats::setup(): test variables" {
+@test "overwriten variables \$0 and \$BASH_ARGV0" {
     [ "${BASH_ARGV0}" = "bashskel.bash" ]
+    [ "${BASH_ARGV0}" = "$0" ]
     [ "${SCRIPTNAME}" = "bashskel" ]
 }
