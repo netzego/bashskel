@@ -9,6 +9,19 @@ LOGFILE="${LOGFILE:-/dev/null}"
 FOO="${FOO:-abc}"
 BAR="${BAR:-xyz}"
 
+# DESC: make global args readonly
+# ARGS: none
+readonly_args() {
+    readonly HELP
+    readonly VERSION
+    readonly DEBUG
+    readonly VERBOSE
+    readonly POS_ARGS
+    readonly LOGFILE
+    readonly FOO
+    readonly BAR
+}
+
 # DESC: wraps getopt to parse cli arguments and sets global parameters
 # ARGS: $@: arguments from the cli
 # shellcheck disable=SC2154,SC2034
@@ -29,27 +42,27 @@ parse_args() {
     while true; do
         case "$1" in
         "-h" | "--help")
-            readonly HELP=true
+            HELP=true
             shift
             continue
             ;;
         "--version")
-            readonly VERSION=true
+            VERSION=true
             shift
             continue
             ;;
         "-v" | "--verbose")
-            readonly VERBOSE=true
+            VERBOSE=true
             shift
             continue
             ;;
         "-d" | "--debug")
-            readonly DEBUG=true
+            DEBUG=true
             shift
             continue
             ;;
         "-l" | "--logfile")
-            readonly LOGFILE="$2"
+            LOGFILE="$2"
             shift 2
             continue
             ;;
@@ -77,5 +90,7 @@ parse_args() {
     done
 
     # shellcheck disable=SC2124
-    readonly POS_ARGS="$@"
+    POS_ARGS="$@"
+
+    readonly_args
 }
