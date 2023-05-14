@@ -3,7 +3,7 @@
 load "${BATS_TEST_DIRNAME}/fixtures/init.bash"
 
 @test "write_lockfile(): \$LOCKFILE do NOT exists" {
-    run -0 write_lockfile "${LOCKFILE}"
+    run -0 write_lockfile
 
     [ -e "$LOCKFILE" ]
 
