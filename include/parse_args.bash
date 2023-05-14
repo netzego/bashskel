@@ -69,5 +69,6 @@ parse_args() {
         esac
     done
 
-    readonly POS_ARGS="$*"
+    # shellcheck disable=SC2124
+    readonly POS_ARGS="$@"
 }
