@@ -5,7 +5,7 @@ BATS_GLOB		?=
 CLI_ARGS		?=
 
 test:
-	@$(BATS) $(BATS_OPTIONS) -r test/
+	@$(BATS) $(BATS_OPTIONS) -r test/$(BATS_GLOB)
 
 run:
 	@bash $(PROGNAME) $(CLI_ARGS)
