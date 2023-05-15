@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Setting the default values. Values are might got a value from the
+# configfile and thus should NOT be written.
 HELP=false
 VERSION=false
 DEBUG="${DEBUG:-false}"
