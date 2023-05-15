@@ -22,6 +22,16 @@ readonly_args() {
     readonly BAR
 }
 
+# DESC: test if string do NOT start with a hyphen
+# ARGS: $1: string to test
+exif_startwith_hyphen() {
+    local arg="$1"
+
+    if [ "${arg:0:1}" = "-" ]; then
+        die 2 "\`$1' start with a hyphen. did you forget an argument?"
+    fi
+}
+
 # DESC: wraps getopt to parse cli arguments and sets global parameters
 # ARGS: $@: arguments from the cli
 # NOTE: an example is found here /usr/share/doc/util-linux
@@ -63,16 +73,19 @@ parse_args() {
             continue
             ;;
         "-l" | "--logfile")
+            exif_startwith_hyphen "$2"
             LOGFILE="$2"
             shift 2
             continue
             ;;
         "-f" | "--foo")
+            exif_startwith_hyphen "$2"
             FOO="$2"
             shift 2
             continue
             ;;
         "-b" | "--bar")
+            exif_startwith_hyphen "$2"
             BAR="$2"
             shift 2
             continue
