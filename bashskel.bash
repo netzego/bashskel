@@ -26,7 +26,7 @@ source "${SCRIPTDIR}/include/print_vars.bash"
 # ARGS: none
 # NOTE: stdout and stderr will eventually get logged
 main() {
-    if [ ${DEBUG} = true ]; then
+    if [ "${DEBUG}" = true ]; then
         print_vars
     fi
 
@@ -41,12 +41,12 @@ parse_args "${ARGS[@]}"
 check_args
 write_lockfile
 
-if [ ${HELP} = true ]; then
+if [ "${HELP}" = true ]; then
     print_help
     exit 0
 fi
 
-if [ ${VERSION} = true ]; then
+if [ "${VERSION}" = true ]; then
     print_version
     exit 0
 fi
