@@ -13,21 +13,18 @@ readonly WARN_PREFIX="${WARN_COLOR}${WARN_STRING}${a_norm}"
 
 # DESC: prints colored $INFO_PREFIX and "$@" to stdout.
 # ARGS: $@: messages to print
-# shellcheck disable=2154
 info() {
     echo -e "${INFO_PREFIX}" "$*"
 }
 
 # DESC: prints colored $ERR_PREFIX and "$@" to stderr.
 # ARGS: $@: messages to print
-# shellcheck disable=2154
 err() {
     echo -e "${ERR_PREFIX}" "$*" >&2
 }
 
 # DESC: prints $WARN_PREFIX and "$@" to stderr.
 # ARGS: $@: messages to print
-# shellcheck disable=2154
 warn() {
     echo -e "${WARN_PREFIX}" "$*" >&2
 }
@@ -35,7 +32,6 @@ warn() {
 # DESC: prints ${@:1} to stderr and exit with code $1
 # ARGS: $1: numeric exit code
 #       ${@:1}: messages to print
-# shellcheck disable=2154
 die() {
     local exitcode="$1"
     shift
