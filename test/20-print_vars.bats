@@ -3,7 +3,7 @@
 load "${BATS_TEST_DIRNAME}/fixtures.bats"
 
 @test "print_vars()" {
-    local regex='^--\s+ARGS:'
+    local regex='^\[..m>>>\[..\s+ARGS:'
 
     run -0 print_vars
 
