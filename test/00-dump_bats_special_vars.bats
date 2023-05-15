@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# shellcheck disable=SC2154
 
 @test "print bats special variables" {
     # https://bats-core.readthedocs.io/en/stable/writing-tests.html#special-variables
