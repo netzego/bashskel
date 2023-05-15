@@ -24,6 +24,7 @@ readonly_args() {
 
 # DESC: wraps getopt to parse cli arguments and sets global parameters
 # ARGS: $@: arguments from the cli
+# NOTE: an example is found here /usr/share/doc/util-linux
 # shellcheck disable=SC2154,SC2034
 parse_args() {
     local name="${f_red}***${a_norm} ${SCRIPTNAME}"
