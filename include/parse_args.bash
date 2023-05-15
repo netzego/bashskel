@@ -2,12 +2,12 @@
 
 HELP=false
 VERSION=false
-POS_ARGS=()
 DEBUG="${DEBUG:-false}"
 VERBOSE="${VERBOSE:-false}"
 LOGFILE="${LOGFILE:-/dev/null}"
 FOO="${FOO:-abc}"
 BAR="${BAR:-xyz}"
+POS_ARGS=()
 
 # DESC: make global args readonly
 # ARGS: none
@@ -16,10 +16,10 @@ readonly_args() {
     readonly VERSION
     readonly DEBUG
     readonly VERBOSE
-    readonly POS_ARGS
     readonly LOGFILE
     readonly FOO
     readonly BAR
+    readonly POS_ARGS
 }
 
 # DESC: test if string do NOT start with a hyphen
