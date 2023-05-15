@@ -2,9 +2,9 @@
 
 HELP=false
 VERSION=false
-DEBUG=false
-VERBOSE=false
 POS_ARGS=()
+DEBUG="${DEBUG:-false}"
+VERBOSE="${VERBOSE:-false}"
 LOGFILE="${LOGFILE:-/dev/null}"
 FOO="${FOO:-abc}"
 BAR="${BAR:-xyz}"
