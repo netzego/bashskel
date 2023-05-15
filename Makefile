@@ -22,4 +22,4 @@ watch_test:
 	watch_run \
 	watch_test
 
-.DEFAULT_GOAL := run
+.DEFAULT_GOAL := test
