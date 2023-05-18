@@ -30,7 +30,7 @@ main() {
         print_vars
     fi
 
-    # implement your own logic here
+    : # implement your own logic below here
 }
 
 trap cleanup EXIT
