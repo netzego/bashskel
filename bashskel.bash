@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-IFS=$'\n\t'
+# IFS=$'\n\t'
 
 readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
 readonly ARGS=("$@")
