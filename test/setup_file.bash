@@ -4,5 +4,5 @@
 # DESC: this functions runs once for every bat file
 # ARGS: none
 setup_file() {
-    bats_require_minimum_version 1.5.0
+    : # Not Implemented
 }

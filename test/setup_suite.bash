@@ -5,5 +5,5 @@
 # ARGS: none
 # NOTE: this file is sourced/load by bats auto magically
 setup_suite() {
-    : # Not Implemented
+    bats_require_minimum_version 1.5.0
 }
