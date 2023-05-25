@@ -30,7 +30,7 @@ load "${BATS_TEST_DIRNAME}/setup.bash"
     # shellcheck disable=SC2030
     LOCKFILE="/non_exists/${SCRIPTNAME}.lock"
 
-    [ "${output}" = "${ERR_PREFIX} \`${LOCKFILE}' path prefix do not exists" ]
-
     run -1 write_lockfile
+
+    [ "${output}" = "${ERR_PREFIX} \`${LOCKFILE}' path prefix do not exists" ]
 }
