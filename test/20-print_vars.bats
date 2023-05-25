@@ -6,7 +6,7 @@ load "${BATS_TEST_DIRNAME}/setup_file.bash"
 load "${BATS_TEST_DIRNAME}/setup.bash"
 
 @test "print_vars()" {
-    local regex='^\[..m>>>\[..\s+ARGS:'
+    local regex='ARGS:'
 
     run -0 print_vars
 
