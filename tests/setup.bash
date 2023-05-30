@@ -8,6 +8,8 @@ setup() {
     readonly SCRIPTDIR="$(realpath "$(dirname "${BATS_TEST_FILENAME}")")/.."
     readonly BASH_ARGV0="bashskel.bash"
 
+    load "fixtures.bash"
+
     load "../include/colors.bash"
     load "../include/utils.bash"
     load "../include/vars.bash"
