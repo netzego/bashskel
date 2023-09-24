@@ -30,7 +30,7 @@ exif_startwith_hyphen() {
     local arg="$1"
 
     if [ "${arg:0:1}" = "-" ]; then
-        die 2 "\`$1' start with a hyphen. did you forget an argument?"
+        die 2 "\`${arg}' start with a hyphen. did you forget an argument?"
     fi
 }
 
