@@ -1,8 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2034
 
-readonly PWD="$(pwd)"
-readonly SCRIPTNAME="$(basename "${BASH_ARGV0%.*}")"
-readonly VERSION_NUMBER="0"
-readonly LOCKFILE="/tmp/${SCRIPTNAME}.lock"
-readonly CONFIGFILE="${PWD}/${SCRIPTNAME}.config"
+declare -rg PWD="$(pwd)"
+declare -rg SCRIPTNAME="$(basename "${BASH_ARGV0%.*}")"
+declare -rg VERSION_NUMBER="0"
+declare -rg LOCKFILE="/tmp/${SCRIPTNAME}.lock"
+declare -rg CONFIGFILE="${PWD}/${SCRIPTNAME}.config"
