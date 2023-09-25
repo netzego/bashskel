@@ -39,7 +39,7 @@ exif_startwith_hyphen() {
 # NOTE: an example is found here /usr/share/doc/util-linux
 # shellcheck disable=SC2154,SC2034
 parse_args() {
-    local name="${f_red}***${a_norm} ${SCRIPTNAME}"
+    declare -r name="${f_red}***${a_norm} ${SCRIPTNAME}"
     temp=$(getopt -o "hvdl:f:b:" -l "help,verbose,debug,logfile:,foo:,bar:,version" -n "${name}" -- "$@")
 
     # `$temp` MUST not be a local variable! otherwise this will NOT work
