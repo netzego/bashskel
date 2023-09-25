@@ -24,7 +24,7 @@ readonly_args() {
     readonly POS_ARGS
 }
 
-# DESC: test if string do NOT start with a hyphen
+# DESC: exit if string do NOT start with a hyphen
 # ARGS: $1: string to test
 exif_startwith_hyphen() {
     declare -r arg="$1"
