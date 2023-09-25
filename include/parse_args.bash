@@ -52,7 +52,7 @@ parse_args() {
     fi
 
     # ensures `--` is set in $@. `$temp` **must** be quoted.
-    eval set -- "$temp"
+    eval set -- "${temp}"
     unset temp
 
     while true; do
