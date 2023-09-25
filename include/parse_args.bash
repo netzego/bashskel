@@ -14,14 +14,15 @@ POS_ARGS=()
 # DESC: make global args readonly
 # ARGS: none
 readonly_args() {
-    readonly HELP
-    readonly VERSION
-    readonly DEBUG
-    readonly VERBOSE
-    readonly LOGFILE
-    readonly FOO
-    readonly BAR
-    readonly POS_ARGS
+    declare -gr HELP
+    declare -gr VERSION
+    declare -gr DEBUG
+    declare -gr VERBOSE
+    declare -gr LOGFILE
+    declare -gr POS_ARGS
+    # example vars; delete/change them
+    declare -gr FOO
+    declare -gr BAR
 }
 
 # DESC: exit if string do NOT start with a hyphen
