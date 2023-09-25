@@ -45,7 +45,6 @@ parse_args() {
     declare temp
     temp=$(getopt -o "hvdl:f:b:" -l "help,verbose,debug,logfile:,foo:,bar:,version" -n "${name}" -- "$@")
 
-    # `$temp` MUST not be a local variable! otherwise this will NOT work
     # shellcheck disable=SC2181
     if [ $? -ne 0 ]; then
         exit 2
