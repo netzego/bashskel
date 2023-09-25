@@ -2,14 +2,15 @@
 
 # Setting the default values. Values are might got a value from the
 # configfile and thus should NOT be written.
-HELP=false
-VERSION=false
-DEBUG="${DEBUG:-false}"
-VERBOSE="${VERBOSE:-false}"
-LOGFILE="${LOGFILE:-/dev/null}"
-FOO="${FOO:-abc}"
-BAR="${BAR:-xyz}"
-POS_ARGS=()
+declare -g HELP=false
+declare -g VERSION=false
+declare -g DEBUG="${DEBUG:-false}"
+declare -g VERBOSE="${VERBOSE:-false}"
+declare -g LOGFILE="${LOGFILE:-/dev/null}"
+declare -g POS_ARGS=()
+# example vars; delete/change them
+declare -g FOO="${FOO:-abc}"
+declare -g BAR="${BAR:-xyz}"
 
 # DESC: make global args readonly
 # ARGS: none
