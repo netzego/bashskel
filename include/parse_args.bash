@@ -27,7 +27,7 @@ readonly_args() {
 # DESC: test if string do NOT start with a hyphen
 # ARGS: $1: string to test
 exif_startwith_hyphen() {
-    local arg="$1"
+    declare -r arg="$1"
 
     if [ "${arg:0:1}" = "-" ]; then
         die 2 "\`${arg}' start with a hyphen. did you forget an argument?"
