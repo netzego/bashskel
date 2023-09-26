@@ -102,8 +102,8 @@ parse_args() {
             ;;
         *)
             # this should never happens, because the `eval set -- "$temp"`
-            # line sets the explicit `--` arguments. which always get catched
-            # before this this case statement.
+            # line sets `--` explicit inside `$@`. `--` will always get catched
+            # before this this case statement and break this loop.
             die 13 "Ooops, this should not happen. Please report this bug."
             ;;
         esac
