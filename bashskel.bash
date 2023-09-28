@@ -34,7 +34,8 @@ main() {
     : # implement your own logic below here
 }
 
-trap cleanup EXIT
+# DESC: init function
+# ARGS: `$@` (required): command line arguments to parse
 
 # check_root
 load_configfile
