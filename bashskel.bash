@@ -6,8 +6,8 @@ set -o pipefail
 
 IFS=$' \n\t' # set `$IFS` to bash default
 
-readonly SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
-readonly ARGS=("$@")
+declare -gr SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
+declare -gr ARGS=("$@")
 
 source "${SCRIPTDIR}/include/colors.bash"
 source "${SCRIPTDIR}/include/utils.bash"
