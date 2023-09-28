@@ -23,6 +23,7 @@ source "${SCRIPTDIR}/include/print_version.bash"
 source "${SCRIPTDIR}/include/print_usage.bash"
 source "${SCRIPTDIR}/include/print_vars.bash"
 
+# DESC: main function
 # ARGS: none
 # NOTE: stdout and stderr will eventually get logged
 main() {
