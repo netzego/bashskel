@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# DESC: Loads $PWD/$SCRIPTNAME.config file
-# ARGS: None
+# DESC: loads $PWD/$SCRIPTNAME.config file
+# ARGS: `$1` (optional) a path to a configfile
+# EXIT: if no configfile is found
 # shellcheck disable=SC2154,SC1090
 load_configfile() {
-    if [ -e "${CONFIGFILE}" ]; then
-        source "${CONFIGFILE}"
+    declare -r configfile="${1:-${CONFIGFILE}}"
+
+    if [ -e "${configfile}" ]; then
+        source "${configfile}"
     else
-        die 1 "\`${CONFIGFILE}' not found"
+        die 1 "\`${configfile}' not found"
     fi
 }
