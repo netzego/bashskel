@@ -5,7 +5,7 @@ load "${BATS_TEST_DIRNAME}/setup_file.bash"
 load "${BATS_TEST_DIRNAME}/setup.bash"
 
 @test "print_vars()" {
-    local regex='ARGS:'
+    local regex='SCRIPTDIR: /'
 
     run -0 print_vars
 
