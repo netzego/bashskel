@@ -4,10 +4,8 @@
 # ARGS: None
 # shellcheck disable=SC2154
 print_vars() {
-    printf "%s %16s: %s\n" "${INFO_PREFIX}" "ARGS" "${ARGS[*]}"
-    printf "%s %16s: %s\n" "${INFO_PREFIX}" "ARGS_LENGHT" "${#ARGS[@]}"
+    printf "%s %16s: %s\n" "${INFO_PREFIX}" "SCRIPTDIR" "${SCRIPTDIR}"
     printf "%s %16s: %s\n" "${INFO_PREFIX}" "SCRIPTNAME" "${SCRIPTNAME}"
-    printf "%s %16s: %s\n" "${INFO_PREFIX}" "PWD" "${PWD}"
     printf "%s %16s: %s\n" "${INFO_PREFIX}" "VERSION_NUMBER " "${VERSION_NUMBER}"
     printf "%s %16s: %s\n" "${INFO_PREFIX}" "LOCKFILE" "${LOCKFILE}"
     printf "%s %16s: %s\n" "${INFO_PREFIX}" "CONFIGFILE" "${CONFIGFILE}"
