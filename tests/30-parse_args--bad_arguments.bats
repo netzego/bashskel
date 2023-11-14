@@ -7,8 +7,10 @@ load "${BATS_TEST_DIRNAME}/setup.bash"
 @test "parse_args(): bad arguments" {
     local args=(
         "--bad"
-        "-x"
+        "--x"
         "-X"
+        "-x"
+       "--X"
         "--bad -x -bad"
     )
 
