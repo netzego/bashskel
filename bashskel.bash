@@ -7,7 +7,6 @@ set -o pipefail
 IFS=$' \n\t' # set `$IFS` to bash default
 
 declare -gr SCRIPTDIR="$(dirname "$(realpath "${BASH_ARGV0}")")"
-declare -gr ARGS=("$@")
 
 source "${SCRIPTDIR}/include/colors.bash"
 source "${SCRIPTDIR}/include/utils.bash"
@@ -36,23 +35,40 @@ main() {
 
 # DESC: init function
 # ARGS: `$@` (required): command line arguments to parse
+init() {
+    # shellcheck disable=SC2206
+    declare -ra args=("$@")
 
-# check_root
-load_configfile
-parse_args "${ARGS[@]}"
-check_args
-write_lockfile
+    # check_root
 
-if [ "${HELP}" = true ]; then
-    print_help
-    exit 0
-fi
+    load_configfile
 
-if [ "${VERSION}" = true ]; then
-    print_version
-    exit 0
-fi
+    # parse_args "${args[@]}"
+    parse_args "${args[@]}"
 
+    # TODO: refactor
+    check_args
+
+    # handle --help and --version parameter
+    {
+        if [ "${HELP}" = true ]; then
+            print_help
+            exit 0
+        fi
+
+        if [ "${VERSION}" = true ]; then
+            print_version
+            exit 0
+        fi
+    }
+
+    trap cleanup EXIT
+
+    write_lockfile
+}
+
+# the script starts here ;-)
+init "$@"
 main 2>&1 | tee "${LOGFILE}"
 
 exit 0
