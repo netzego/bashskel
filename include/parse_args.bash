@@ -117,6 +117,6 @@ parse_args() {
     # this does NOT work without braces
     POS_ARGS=("$@")
 
-    # make global vars ro
+    # now we make global vars readonly
     readonly_args
 }
