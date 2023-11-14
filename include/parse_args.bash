@@ -52,9 +52,7 @@ parse_args() {
         exit 2
     fi
 
-    # delete args `$@` (from function)
-    # The command set -- without argument shall unset all positional
-    # parameters and set the special parameter '#' to zero.
+    # deletes positional args `$@` (from function)
     set --
 
     # ensures `--` is set in `$@` (the args array from this function)
