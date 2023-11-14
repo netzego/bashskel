@@ -55,8 +55,10 @@ parse_args() {
     # deletes positional args `$@` (from function)
     set --
 
-    # ensures `--` is set in `$@` (the args array from this function)
+    # getopt returns `quoted` output. this must be reset with `eval set -- ""`.
+    # the double quotes are necessary
     eval set -- "${temp}"
+
     unset temp
 
     while true; do
