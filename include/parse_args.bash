@@ -42,8 +42,8 @@ exif_startwith_hyphen() {
 # shellcheck disable=SC2154,SC2034
 parse_args() {
     declare -r name="${f_red}***${a_norm} ${SCRIPTNAME}"
-    # `declare temp=$(...)` do NOT return the correct `$?`!
-    # the declaration and assignment MUST be separated
+    # `declare temp=$(...)` declaration and assignment in one statement overwrites
+    # the return value (`$?`) from the subshell!
     declare temp
     temp=$(getopt -o "hvdl:f:b:" -l "help,verbose,debug,logfile:,foo:,bar:,version" -n "${name}" -- "$@")
 
