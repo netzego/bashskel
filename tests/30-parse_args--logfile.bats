@@ -28,10 +28,11 @@ load "${BATS_TEST_DIRNAME}/setup.bash"
         "--logfile"
         "-l"
         # missing arg followed by an valid options
-        "--logfile --"
-        "--logfile -v"
-        "--logfile -h"
-        "--logfile --verbose"
+        # 2023-11-14 remove because of cfb9949 -- rm `exif_start_with_hypen` func
+        # "--logfile --"
+        # "--logfile -v"
+        # "--logfile -h"
+        # "--logfile --verbose"
     )
 
     for i in "${args[@]}"; do
