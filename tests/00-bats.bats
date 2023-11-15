@@ -1,4 +1,4 @@
-#!/bin/bats
+#!/usr/bin/env bats
 
 @test "bats is working" {
     # shellcheck disable=SC2050
