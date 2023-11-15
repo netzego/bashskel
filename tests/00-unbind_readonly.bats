@@ -14,7 +14,7 @@ load "${BATS_TEST_DIRNAME}/setup.bash"
 
     run -1 unbind_readonly "RO_VAR"
 
-    [ "${output}" = "${ERR_PREFIX} \`unbind_readonly' must run as root" ]
+    [[ "${output}" == "${ERR_PREFIX} \`unbind_readonly' must run as root" ]]
 }
 
 # DESC: test if unbind_readonly func work properly
