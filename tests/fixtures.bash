@@ -14,3 +14,9 @@ unbind_readonly() {
     # see https://stackoverflow.com/a/17398009
     gdb -ex 'call (int) unbind_variable("'"${varname}"'")' --pid=$$ --batch
 }
+
+# DESC: print to test output stream; tap complined
+# ARGS: `$@` array of things to print
+tapecho() {
+    echo "#" "$@" >&3
+}
