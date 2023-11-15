@@ -5,6 +5,7 @@ load "${BATS_TEST_DIRNAME}/setup_file.bash"
 load "${BATS_TEST_DIRNAME}/setup.bash"
 
 # DESC: test if unbind_readonly func work properly
+# NOTE: this will fail -- only root can unbind ro vars
 @test "fixtures.bats::unbind_readonly() [run NOT as root]" {
     [[ "$UID" -eq 0 ]] && skip
 
