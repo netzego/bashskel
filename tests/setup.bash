@@ -5,7 +5,11 @@
 # ARGS: none
 # NOTE: overwrite $0 and $BASH_ARGV0. might not smart or it's a bug in bats?
 setup() {
-    readonly BASH_ARGV0="bashskel.bash"
+    # overwrite `BASH_ARGV0`; we depend on it in the `bashskel.bash` script
+    declare -rg BASH_ARGV0="bashskel.bash"
+    # overwrite `$SCRIPTDIR`; this is set in `bashskel.bash` directly (so it is
+    # not sourced)
+    declare -rg SCRIPTDIR="$(realpath "${BATS_TEST_DIRNAME}/..")"
 
     load "fixtures.bash"
 
